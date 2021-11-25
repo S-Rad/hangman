@@ -1,22 +1,20 @@
 import pizza from "./pizza0.png";
 import "./App.css";
+import Keyboard from "./Keyboard";
+import { Box, Button } from "@mui/material/";
 
 function App() {
+  const isCorrectGuess = (letter) => {
+    console.log(letter);
+    console.log(this);
+  };
   return (
     <div className="App">
       <header className="App-header">
         <img src={pizza} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
+        <Button onClick={isCorrectGuess}>AAAAAAA</Button>
+        <div style={{ fontFamily: "monospace" }}>_ _ _ _ _ _ _</div>
+        <Keyboard handleClick={isCorrectGuess} />
       </header>
     </div>
   );
