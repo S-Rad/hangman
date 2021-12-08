@@ -1,12 +1,11 @@
 import React, { useState } from "react";
-import pizza from "./pizza0.png";
 import "./App.css";
-import Keyboard from "./Keyboard";
-
+import Keyboard from "./Components/Keyboard";
+import PictureBox from "./Components/PictureBox"
 function App() {
   const word = "hangman";
   const [triesLeft, setTriesLeft] = useState(0);
-  const imgSrc = "./pizza" + triesLeft.toString() + ".png";
+  const imgSrc = "./Components/Pictures/pizza" + triesLeft.toString() + ".png";
   const handleGuess = (letter) => {
     console.log(letter);
     console.log(imgSrc);
@@ -17,7 +16,7 @@ function App() {
   return (
     <div className="App">
       <header className="App-header">
-        <img src={imgSrc} className="App-logo" alt="logo" key={imgSrc} />
+        <PictureBox gameState = {triesLeft} />
         <div style={{ fontFamily: "monospace" }}>_ _ _ _ _ _ _</div>
         <Keyboard handleClick={handleGuess} />
       </header>
