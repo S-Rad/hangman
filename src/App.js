@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import "./App.css";
 import Keyboard from "./Components/Keyboard";
-import PictureBox from "./Components/PictureBox"
+import PictureBox from "./Components/PictureBox";
 function App() {
   const word = "hangman";
   const [triesLeft, setTriesLeft] = useState(0);
@@ -16,9 +16,9 @@ function App() {
   return (
     <div className="App">
       <header className="App-header">
-        <PictureBox gameState = {triesLeft} />
+        <PictureBox gameState={triesLeft} />
         <div style={{ fontFamily: "monospace" }}>_ _ _ _ _ _ _</div>
-        <Keyboard handleClick={handleGuess} />
+        <Keyboard handleClick={handleGuess} gameState={triesLeft} />
       </header>
     </div>
   );
